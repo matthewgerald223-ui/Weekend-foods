@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekend Foods by Roro</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #faf5f0;
+      color: #333;
+      padding-bottom: 90px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #d87d4a, #b85b28);
+      color: white;
+      text-align: center;
+      padding: 30px 15px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .logo-container {
+      width: 130px;
+      height: 130px;
+      margin: 0 auto 15px;
+      border-radius: 50%;
+      border: 4px solid white;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      background: white;
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 13px;
+      font-style: italic;
+      opacity: 0.95;
+      margin-top: 5px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #b85b28;
+      border-left: 4px solid #b85b28;
+      padding-left: 10px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .food-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .food-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .food-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .food-info {
+      padding: 15px;
+    }
+
+    .food-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .food-desc {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .food-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .btn-add {
+      background-color: #d87d4a;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .btn-add:hover {
+      background-color: #b85b28;
+    }
+
+    .cart-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 15px 20px;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 15px 15px 0 0;
+    }
+
+    .cart-info {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 3px 8px rgba(37, 211, 102, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo-container">
+      <img src="Screenshot_20261020-173357.jpg" alt="Weekend Foods by Roro Logo">
+    </div>
+    <h1>WEEKEND FOODS BY RORO</h1>
+    <p>"Now You Wished You Ordered More, Cousin!"</p>
+  </header>
+
+  <!-- Container -->
+  <div class="container">
+    <h2 class="section-title">Special Menu</h2>
+
+    <div class="food-grid">
+      
+      <!-- Food Item 1 -->
+      <div class="food-card">
+        <img src="Screenshot_20261020-173309.jpg" alt="Loaded Native Jollof Box">
+        <div class="food-info">
+          <div class="food-title">Loaded Native Jollof Box</div>
+          <div class="food-desc">Spicy native jollof rice packed with ponmo, meats, pepper sauce, and boiled egg.</div>
+          <div class="food-bottom">
+            <span class="price">₦8,500</span>
+            <button class="btn-add" onclick="addToOrder('Loaded Native Jollof Box', 8500)">Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Item 2 -->
+      <div class="food-card">
+        <img src="Screenshot_20261020-173256.jpg" alt="Special Party Foil Platter">
+        <div class="food-info">
+          <div class="food-title">Special Party Foil Platter</div>
+          <div class="food-desc">Mega foil platter featuring smoky jollof, turkey wings, and coleslaw salad combo.</div>
+          <div class="food-bottom">
+            <span class="price">₦20,000</span>
+            <button class="btn-add" onclick="addToOrder('Special Party Foil Platter', 20000)">Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Item 3 -->
+      <div class="food-card">
+        <img src="Screenshot_20261020-173235.jpg" alt="Creamy Pasta & Chicken Breast">
+        <div class="food-info">
+          <div class="food-title">Creamy Pasta & Chicken Breast</div>
+          <div class="food-desc">Rich creamy penne pasta served with grilled chicken breast and boiled egg.</div>
+          <div class="food-bottom">
+            <span class="price">₦12,500</span>
+            <button class="btn-add" onclick="addToOrder('Creamy Pasta & Chicken Breast', 12500)">Add to Order</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cart Bar -->
+  <div class="cart-bar">
+    <div class="cart-info">
+      Total: <span id="total-price" style="color: #2e7d32;">₦0</span>
+      <div id="item-count" style="font-size: 12px; color: #666; font-weight: normal;">0 items selected</div>
+    </div>
+    <a href="#" class="btn-whatsapp" onclick="sendWhatsAppOrder()">
+      <svg width="18"
